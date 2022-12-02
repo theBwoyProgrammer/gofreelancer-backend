@@ -6,7 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
-
+/.idea
 # Ignore node_modules
 /node_modules
 
