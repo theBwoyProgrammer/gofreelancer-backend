@@ -15,7 +15,7 @@ RSpec.describe Reservation, type: :model do
     
     describe 'validation' do
         it 'has valid attributes' do
-            expect
+            expect(Reservation.new(appointment_date: '2020-01-01')).to be_valid
         end
     end
 end
