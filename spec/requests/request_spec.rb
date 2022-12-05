@@ -1,23 +1,51 @@
-require '../rails_helper'
+require 'rails_helper'
 
-RSpec.describe 'FreelancerController', type: :request do
-  describe 'get#index' do
-    before do
-      FactoryBot.create_list(:freelancer, 10)
-      get '/api/v1/freelancers'
+RSpec.describe 'Controllers', type: :request do
+  describe 'Freelancers' do
+    describe 'get#index' do
+      before do
+        FactoryBot.create_list(:freelancer, 10)
+        get api_v1_freelancers
+      end
+
+      it 'response status success' do
+        expect(response).to have_http_status(:ok)
+      end
+      it 'returns all freelancers' do
+        expect(json.size).to eq(10)
+      end
     end
 
-    it 'response status success' do
-      expect(response).to have_http_status(:ok)
-    end
+    describe 'get#show' do
+      before do
+        freelancer = FactoryBot.create(:freelancer)
+        get api_v1_freelancer(freelancer.id)
+      end
 
-    it 'render the page' do
-      expect(response).to render_template(:index)
+      it 'response status success' do
+        expect(response).to have_http_status(:ok)
+      end
+      it 'returns specific freelancer' do
+        expect(json.size).to eq(1)
+      end
     end
-
-    it 'renders the correct placeholder' do
-      expect(response.body).to include('Login')
-      expect(response.body).to include('Sign Up')
+  end
+  describe 'Reservations' do
+    describe 'get#all' do
+      before do
+        user = FactoryBot.create(:user)
+        freelancer = FactoryBot.create(:freelancer)
+        10.times do
+          FactoryBot.create(:reservation, user: user, freelancer: freelancer)
+        end
+        get api_v1_user_reservations(user.id)
+      end
+      it 'response status success' do
+        expect(response).to have_http_status(:ok)
+      end
+      it 'returns specific user\'s reservations' do
+        expect(json.size).to eq(10)
+      end
     end
   end
 end
