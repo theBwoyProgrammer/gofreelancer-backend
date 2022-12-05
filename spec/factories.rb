@@ -18,9 +18,10 @@ FactoryBot.define do
     association :user
     association :freelancer
   end
-  # trait :with_details do
-  #   after(:create) do |user|
-  #     create(:reservation, user_id: user.id, freelancer_id: freelancer.id)
-  #   end
-  # end
+end
+
+FactoryBot.define do
+  factory :specialization do
+    name { Faker::ProgrammingLanguage.name }
+  end
 end
