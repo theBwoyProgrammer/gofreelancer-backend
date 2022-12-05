@@ -7,8 +7,4 @@ class User < ApplicationRecord
   has_many :freelancers, through: :reservations
 
   validates :name, presence: true
-
-  def jwt_payload
-    super
-  end
 end
