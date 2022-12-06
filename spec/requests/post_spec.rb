@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "post request", :type => :request do
+RSpec.describe 'post request', type: :request do
   describe 'Reservations' do
     before do
       post '/api/v1/users/:user_id/reservations', params: {
@@ -24,11 +24,11 @@ RSpec.describe "post request", :type => :request do
   describe 'Freelancers' do
     before do
       post '/api/v1/freelancers', params: {
-        :name => 'Usb Bush',
-        :details => 'Details about this freelancer',
-        :photo => Faker::Internet.url,
-        :fee => Faker::Number.between(from: 5, to: 100),
-        :location => Faker::Address.full_address_as_hash(:full_address)
+        name: 'Usb Bush',
+        details: 'Details about this freelancer',
+        photo: Faker::Internet.url,
+        fee: Faker::Number.between(from: 5, to: 100),
+        location: Faker::Address.full_address_as_hash(:full_address)
       }
     end
 
@@ -47,7 +47,7 @@ RSpec.describe "post request", :type => :request do
   describe 'Specialization' do
     before do
       post '/api/v1/specializations', params: {
-        :name => 'ruby',
+        name: 'ruby'
       }
     end
 
