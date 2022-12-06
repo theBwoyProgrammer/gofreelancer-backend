@@ -50,7 +50,7 @@ RSpec.describe 'Controllers', type: :request do
         user = FactoryBot.create(:user)
         freelancer = FactoryBot.create(:freelancer)
         10.times do
-          FactoryBot.create(:reservation, user: user, freelancer: freelancer)
+          FactoryBot.create(:reservation, user:, freelancer:)
         end
         get "/api/v1/users/#{user.id}/reservations"
       end
