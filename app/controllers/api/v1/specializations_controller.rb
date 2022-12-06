@@ -5,7 +5,7 @@ class Api::V1::SpecializationsController < ApplicationController
   end
 
   def create
-    @specialization =  Specialization.new(name: specialization_params[:name])
+    @specialization = Specialization.new(name: specialization_params[:name])
     if @specialization.save
       render json: @specialization, status: :created, location: api_v1_freelancers_path
     else
@@ -14,6 +14,7 @@ class Api::V1::SpecializationsController < ApplicationController
   end
 
   private
+
   def specialization_params
     params.require(:specialization).permit(:name)
   end

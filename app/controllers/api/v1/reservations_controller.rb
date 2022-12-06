@@ -6,9 +6,9 @@ class Api::V1::ReservationsController < ApplicationController
 
   def create
     @freelancer = Freelancer.find(reservation_params[:freelancer_id])
-    @reservation =  Reservation.new(appointment_date: reservation_params[:appointment_date],
-                                    user: set_user,
-                                    freelancer: @freelancer)
+    @reservation = Reservation.new(appointment_date: reservation_params[:appointment_date],
+                                   user: set_user,
+                                   freelancer: @freelancer)
     if @reservation.save
       render json: @reservation, status: :created, location: api_v1_freelancers_path
     else
@@ -17,6 +17,7 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   private
+
   def set_user
     User.find(params[:user_id])
   end
