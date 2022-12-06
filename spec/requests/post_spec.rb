@@ -5,7 +5,8 @@ RSpec.describe 'post request', type: :request do
     before do
       my_user = FactoryBot.create(:user)
       @my_freelancer = FactoryBot.create(:freelancer)
-      post "/api/v1/users/#{my_user.id}/reservations", params: { reservation: { appointment_date: '2014-09-24', freelancer_id: @my_freelancer.id } }
+      post "/api/v1/users/#{my_user.id}/reservations",
+           params: { reservation: { appointment_date: '2014-09-24', freelancer_id: @my_freelancer.id } }
     end
     it 'returns the reservations\' appointment date' do
       expect(json['appointment_date']).to eq('2014-09-24')
@@ -26,7 +27,7 @@ RSpec.describe 'post request', type: :request do
                                                 { name: 'Usb Bush', details: 'Details about this freelancer',
                                                   photo: Faker::Internet.url,
                                                   fee: Faker::Number.between(from: 5, to: 100),
-                                                  location: "DRC, Goma , Nord-Kivu"} }
+                                                  location: 'DRC, Goma , Nord-Kivu' } }
       end
 
       it 'returns the freelancer\'name' do
@@ -50,8 +51,7 @@ RSpec.describe 'post request', type: :request do
           photo: 'Faker::Internet.url', # should be url
           fee: '', # should be a number,
           location: Faker::Address.full_address_as_hash(:full_address)
-        }
-        }
+        } }
       end
 
       # response should have HTTP Status 422 Created
@@ -87,7 +87,7 @@ RSpec.describe 'post request', type: :request do
     end
     describe 'Invalid input' do
       before do
-        post '/api/v1/specializations', params: { specialization: { name: "" } }
+        post '/api/v1/specializations', params: { specialization: { name: '' } }
       end
 
       # response should have HTTP Status 422 Created
