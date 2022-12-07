@@ -1,7 +1,7 @@
 class Api::V1::ReservationsController < ApplicationController
   before_action :set_user, only: [:index]
   def index
-    render json: @current_user.reservations, status: :ok
+    render json: set_user.reservations, status: :ok
   end
 
   def create
