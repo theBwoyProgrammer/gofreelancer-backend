@@ -32,15 +32,18 @@ RSpec.describe 'Controllers', type: :request do
     end
     describe 'get#show' do
       before do
-        freelancer = FactoryBot.create(:freelancer)
-        get "/api/v1/freelancers/#{freelancer.id}"
+        @freelancer = FactoryBot.create(:freelancer)
+        get "/api/v1/freelancers/#{@freelancer.id}"
       end
 
       it 'response status success' do
         expect(response).to have_http_status(:ok)
       end
       it 'returns specific freelancer' do
-        expect(json.size).to eq(1)
+        expect(json['id']).to eq(@freelancer.id)
+        expect(json['name']).to eq(@freelancer.name)
+        expect(json['details']).to eq(@freelancer.details)
+        expect(json['photo']).to eq(@freelancer.photo)
       end
     end
   end
@@ -52,7 +55,7 @@ RSpec.describe 'Controllers', type: :request do
         10.times do
           FactoryBot.create(:reservation, user: my_user, freelancer: my_freelancer)
         end
-        get "/api/v1/users/#{user.id}/reservations"
+        get "/api/v1/users/#{my_user.id}/reservations"
       end
       it 'response status success' do
         expect(response).to have_http_status(:ok)
