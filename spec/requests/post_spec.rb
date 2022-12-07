@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe 'post request', type: :request do
+RSpec.describe 'Post requests', type: :request do
   describe 'Reservations' do
     before do
-      my_user = FactoryBot.create(:user)
+      @my_user = FactoryBot.create(:user)
       @my_freelancer = FactoryBot.create(:freelancer)
-      post "/api/v1/users/#{my_user.id}/reservations",
+      post "/api/v1/users/#{@my_user.id}/reservations",
            params: { reservation: { appointment_date: '2014-09-24', freelancer_id: @my_freelancer.id } }
     end
     it 'returns the reservations\' appointment date' do
