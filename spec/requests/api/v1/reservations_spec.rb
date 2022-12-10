@@ -23,6 +23,15 @@ RSpec.describe 'api/v1/reservations', type: :request do
 
     post('create reservation') do
       response(200, 'successful') do
+        consumes 'application/json'
+        parameter name: :specialization, in: :body, schema: {
+          type: :object,
+          properties: {
+            appointment_date: { type: :date },
+            freelancer_id: { type: :integer }
+          },
+          required: %w[appointment_date ]
+        }
         let(:user_id) { '123' }
 
         after do |example|

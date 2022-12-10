@@ -20,7 +20,19 @@ RSpec.describe 'api/v1/freelancers', type: :request do
 
     post('create freelancer') do
       response(200, 'successful') do
-
+        consumes 'application/json'
+        parameter name: :freelancer, in: :body, schema: {
+          type: :object,
+          properties: {
+            name: { type: :string, example: Faker::Name.name },
+            photo: { type: 'string', example: Faker::Internet.url,
+                     pattern: '^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$' },
+            details: { type: :string, example: Faker::Lorem.paragraph },
+            fee: { type: 'integer', example: Faker::Number.between(from: 5, to: 100) },
+            location: { type: 'string', example: Faker::Address.full_address_as_hash(:full_address) }
+          },
+          required: %w[name photo details fee location]
+        }
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {

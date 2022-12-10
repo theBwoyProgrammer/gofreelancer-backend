@@ -104,24 +104,24 @@ RSpec.describe 'Post requests', type: :request do
     end
   end
 
-  describe 'Users' do
-    describe 'Sign up' do
-      before do
-        post 'url ', params: {user: {
-          email: 'email@gofreelancer.com',
-          password: 'password'
-        }}
-      end
-      it 'returns successfully logged in' do
-        expect(json(:))
-      end
-
-    end
-    describe 'Sign in' do
-
-    end
-    describe 'Sign out' do
-
-    end
-  end
+  # describe 'Users' do
+  #   describe 'Sign up' do
+  #     before do
+  #       post 'url ', params: {user: {
+  #         email: 'email@gofreelancer.com',
+  #         password: 'password'
+  #       }}
+  #     end
+  #     it 'returns successfully logged in' do
+  #       expect(json(:))
+  #     end
+  #
+  #   end
+  #   describe 'Sign in' do
+  #
+  #   end
+  #   describe 'Sign out' do
+  #
+  #   end
+  # end
 end
