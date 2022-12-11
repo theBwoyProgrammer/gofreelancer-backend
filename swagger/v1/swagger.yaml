@@ -7,11 +7,49 @@ paths:
   "/api/v1/freelancers":
     get:
       summary: list freelancers
+      tags:
+      - Freelancers
       responses:
         '200':
           description: successful
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                      example: Sarita Strosin VM
+                    photo:
+                      type: string
+                      example: http://fritsch-nitzsche.name/alysa
+                      pattern: "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$"
+                    details:
+                      type: string
+                      example: Inventore consequatur corporis. Vitae laboriosam consectetur.
+                        Et at corrupti.
+                    fee:
+                      type: integer
+                      example: 27
+                    location:
+                      type: string
+                      example: 13831 Judith Lodge
+                    created_at:
+                      type: string
+                      format: datetime
+                      example: '2022-11-29'
+                    updated_at:
+                      type: string
+                      format: datetime
+                      example: '2022-11-25'
     post:
       summary: create freelancer
+      tags:
+      - Create freelancer
       parameters: []
       responses:
         '200':
@@ -24,22 +62,21 @@ paths:
               properties:
                 name:
                   type: string
-                  example: Lourie Crona
+                  example: Eloy Morissette
                 photo:
                   type: string
-                  example: http://ryan.io/ashli_lind
+                  example: http://schroeder.io/valencia
                   pattern: "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$"
                 details:
                   type: string
-                  example: Non ipsum aliquid. Laudantium saepe rerum. Accusantium
-                    nihil nam.
+                  example: Perspiciatis quia et. Optio quis deleniti. Consequatur
+                    aspernatur qui.
                 fee:
                   type: integer
-                  example: 76
+                  example: 21
                 location:
                   type: string
-                  example:
-                    full_address: 49017 Morissette Brook, Andersonmouth, ND 36359-4094
+                  example: 38807 Jeri Neck
               required:
               - name
               - photo
@@ -47,15 +84,74 @@ paths:
               - fee
               - location
   "/api/v1/freelancers/{id}":
-    parameters:
-    - name: id
-      in: path
-      description: id
-      required: true
-      schema:
-        type: string
     get:
       summary: show freelancer
+      tags:
+      - Freelancer
+      parameters:
+      - name: id
+        in: path
+        description: id
+        default: 1
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                    example: Randal Lang
+                  photo:
+                    type: string
+                    example: http://pacocha.name/emory_von
+                    pattern: "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$"
+                  details:
+                    type: string
+                    example: Rem rerum quo. Voluptatem laborum consequuntur. Et iste
+                      assumenda.
+                  fee:
+                    type: integer
+                    example: 39
+                  location:
+                    type: string
+                    example: 898 Tillman Walks
+                  created_at:
+                    type: string
+                    format: datetime
+                    example: '2022-11-30'
+                  updated_at:
+                    type: string
+                    format: datetime
+                    example: '2022-11-27'
+                required:
+                - id
+                - name
+                - photo
+                - details
+                - fee
+                - location
+        '404':
+          description: freelancer not found
+    delete:
+      summary: delete freelancer
+      tags:
+      - Delete Freelancer
+      parameters:
+      - name: id
+        in: path
+        description: id
+        default: 0
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: successful
@@ -69,15 +165,50 @@ paths:
         type: string
     get:
       summary: list reservations
+      tags:
+      - Reservations
       responses:
         '200':
           description: successful
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    appointment_date:
+                      type: string
+                      format: datetime
+                      example: '2023-01-01'
+                    freelancer_id:
+                      type: integer
+                      example: 36
+                    user_id:
+                      type: integer
+                      example: user_id
+                    created_at:
+                      type: string
+                      format: datetime
+                      example: '2022-11-19'
+                    updated_at:
+                      type: string
+                      format: datetime
+                      example: '2022-11-26'
+        '404':
+          description: user not found
     post:
       summary: create reservation
+      tags:
+      - Reservation
       parameters: []
       responses:
         '200':
           description: successful
+        '404':
+          description: user not found
       requestBody:
         content:
           application/json:
@@ -85,11 +216,15 @@ paths:
               type: object
               properties:
                 appointment_date:
-                  type: date
+                  type: string
+                  format: datetime
+                  example: '2022-12-16'
                 freelancer_id:
                   type: integer
+                  example: 37
               required:
               - appointment_date
+              - freelancer_id
   "/api/v1/users/{user_id}/reservations/new":
     parameters:
     - name: user_id
@@ -100,17 +235,62 @@ paths:
         type: string
     get:
       summary: new reservation
+      tags:
+      - Create reservation
+      parameters: []
       responses:
         '200':
           description: successful
+        '404':
+          description: user not found
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                appointment_date:
+                  type: string
+                  format: datetime
+                  example: '2022-12-15'
+                freelancer_id:
+                  type: integer
+                  example: 38
+              required:
+              - appointment_date
+              - freelancer_id
   "/api/v1/specializations":
     get:
       summary: list specializations
+      tags:
+      - Specializations
       responses:
         '200':
           description: successful
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                      example: Vito Brekke
+                    created_at:
+                      type: string
+                      format: datetime
+                      example: '2022-12-06'
+                    updated_at:
+                      type: string
+                      format: datetime
+                      example: '2022-11-22'
     post:
       summary: create specialization
+      tags:
+      - Create specialization
       parameters: []
       responses:
         '200':
@@ -123,6 +303,7 @@ paths:
               properties:
                 name:
                   type: string
+                  example: Carole Waelchi
               required:
               - name
 servers:
