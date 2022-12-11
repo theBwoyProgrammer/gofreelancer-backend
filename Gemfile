@@ -53,3 +53,8 @@ group :test do
   gem 'factory_bot_rails'
   gem 'faker'
 end
+# Devise gem for authentication
+gem 'devise'
+
+# devise jwt gem
+gem 'devise-jwt'
