@@ -1,6 +1,6 @@
-class ReservationsController
-  def index
-    @reservations = Reservation.all
-    render json: @reservations
-  end
+class Api::V1::ReservationsController < ApplicationController
+  # def index
+  # @reservations = Reservation.all
+  # render json: @reservations
+  # end
 end

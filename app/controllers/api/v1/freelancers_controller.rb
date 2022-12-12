@@ -1,2 +1,2 @@
-class FreelancersController < ApplicationController
+class Api::V1::FreelancersController < ApplicationController
 end
