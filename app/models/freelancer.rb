@@ -3,6 +3,8 @@ class Freelancer < ApplicationRecord
 
   has_and_belongs_to_many :specializations, dependent: :destroy
 
+  # has_and_belongs_to_many :freelancer
+
   validates :name, presence: true
   validates :photo, presence: true
   validates :details, presence: true

@@ -3,7 +3,6 @@ class CreateFreelancersSpecializations < ActiveRecord::Migration[7.0]
     create_table :freelancers_specializations, id: false  do |t|
       t.belongs_to :freelancer
       t.belongs_to :specialization
-
     end
   end
 end
