@@ -1,5 +1,6 @@
 class Api::V1::FreelancersController < ApplicationController
-  before_action :set_freelancer, only: [:show]
+  skip_before_action :authenticate_user!, only: [:index]
+  before_action :set_freelancer, only: %i[show destroy]
   def index
     render json: Freelancer.all, status: :ok
   end
@@ -15,6 +16,11 @@ class Api::V1::FreelancersController < ApplicationController
     else
       render json: @freelancer.errors, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @freelancer.destroy
+    head :no_content
   end
 
   private

@@ -4,7 +4,7 @@ FactoryBot.define do
     details { Faker::Lorem.paragraph }
     photo { Faker::Internet.url }
     fee { Faker::Number.between(from: 5, to: 100) }
-    location { Faker::Address.full_address_as_hash(:full_address) }
+    location { Faker::Address.street_address }
   end
 end
 FactoryBot.define do
