@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  default_url_options :host => 'localhost', :port => 3000
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'

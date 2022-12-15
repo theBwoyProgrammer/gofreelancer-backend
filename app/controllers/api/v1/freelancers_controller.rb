@@ -31,6 +31,6 @@ class Api::V1::FreelancersController < ApplicationController
   end
 
   def freelancer_params
-    params.require(:freelancer).permit(:name, :photo, :details, :fee, :location)
+    params.require(:freelancer).permit(:name, :photo, :details, :fee, :location, :featured_image)
   end
 end
