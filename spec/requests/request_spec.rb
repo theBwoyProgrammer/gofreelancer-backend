@@ -50,12 +50,12 @@ RSpec.describe 'Controllers', type: :request do
   describe 'Reservations' do
     describe 'get#all' do
       before do
-        my_user = FactoryBot.create(:user)
-        my_freelancer = FactoryBot.create(:freelancer)
+        @my_user = FactoryBot.create(:user)
+        @my_freelancer = FactoryBot.create(:freelancer)
         10.times do
-          FactoryBot.create(:reservation, user: my_user, freelancer: my_freelancer)
+          FactoryBot.create(:reservation, user: @my_user, freelancer: @my_freelancer)
         end
-        get "/api/v1/users/#{my_user.id}/reservations"
+        get "/api/v1/users/#{@my_user.id}/reservations"
       end
       it 'response status success' do
         expect(response).to have_http_status(:ok)
