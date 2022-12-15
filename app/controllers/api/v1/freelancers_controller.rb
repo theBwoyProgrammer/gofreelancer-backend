@@ -1,4 +1,5 @@
 class Api::V1::FreelancersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
   before_action :set_freelancer, only: %i[show destroy]
 
   def index
