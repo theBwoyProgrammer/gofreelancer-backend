@@ -1,24 +1,66 @@
-# README
+[![](https://img.shields.io/badge/Micronaut-Angom%20Chittaranjan-blue)](https://github.com/AngomRanjan)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# GoFreelance-Back-end
 
-Things you may want to cover:
+oFreelance-Back-end.
 
-* Ruby version
+## Built with
+  - Ruby
+  - Rails
+  - Devise
+  - Devise-jwt
+  - Axios
+  - Postgresql
 
-* System dependencies
+## Pre-requsite
+  - Ruby
+  - Rails
+  - Devise
+  - Devise-jwt
+  - Axios
+  - Postgresql
 
-* Configuration
+## Getting Started
+ To get a local copy of this project, open your terminal and type:
+  - git clone https://github.com/techwolf404/gofreelancer-backend.git
+  - cd gofreelancer-backend
+  - bundle install
+  - rails s
+ That's it! You can play with it as you wish 😄
+ 
+### Authors
 
-* Database creation
+#### 👤 Hatim
 
-* Database initialization
+#### 👤 Angom Chittaranjan
 
-* How to run the test suite
+- GitHub: [@AngomRanjan](https://github.com/AngomRanjan)
+- Twitter: [@RanjanAngom](https://twitter.com/RanjanAngom)
+- LinkedIn: [angom-chittaranjan](https://linkedin.com/in/angom-chittaranjan)
 
-* Services (job queues, cache servers, search engines, etc.)
+### Show your support
+Give a [⭐️](../../stargazers) if you like this project!
 
-* Deployment instructions
+### 🤝 Contributing
+Contributions, [issues](../../issues), and feature requests are welcome! Feel free to check the issues page.
 
-* ...
+## :footprints: Track Me
+
+<a href="https://twitter.com/RanjanAngom?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">
+<img src="https://img.shields.io/badge/-@RanjanAngom-blue?style=flat&logo=twitter&logoColor=white">
+</a>
+
+<a class="github-button" href="https://github.com/AngomRanjan" aria-label="Follow @AngomRanjan on GitHub">
+ <img src="https://img.shields.io/badge/-@AngomRanjan-green?style=flat&logo=github&logoColor=white">
+</a>
+
+### Acknowledgments
+
+- Thanks to the Microverse team for the great curriculum 🙌.
+- Thanks to Code Reviewers for the insightful feedback ⚡💘.
+- My Family.
+- All my fellow micronauts.
+
+## 📝 License
+
+This project is [MIT](LICENSE) licensed.
