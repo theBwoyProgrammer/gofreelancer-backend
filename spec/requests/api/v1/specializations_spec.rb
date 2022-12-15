@@ -1,9 +1,7 @@
 require 'swagger_helper'
 
 RSpec.describe 'api/v1/specializations', type: :request do
-
   path '/api/v1/specializations' do
-
     get('list specializations') do
       tags 'Specializations'
       produces 'application/json'
