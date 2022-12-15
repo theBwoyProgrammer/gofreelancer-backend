@@ -1,17 +1,33 @@
 class Api::V1::FreelancersController < ApplicationController
-  skip_before_action :authenticate_user!, :only => [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_freelancer, only: %i[show destroy]
 
   def index
     render json: Freelancer.all, status: :ok
   end
 
+  # user.as_json(include: { posts: {
+  #   include: { comments: {
+  #     only: :body } },
+  #   only: :title } })
   def show
     render json: @freelancer, status: :ok
   end
 
   def create
-    @freelancer = Freelancer.new(freelancer_params)
+    @freelancer = Freelancer.new(
+      name: freelancer_params[:name],
+      photo: freelancer_params[:photo],
+      details: freelancer_params[:details],
+      fee: freelancer_params[:fee],
+      location: freelancer_params[:location],
+      featured_image: freelancer_params[:featured_image]
+    )
+
+    list = freelancer_params[:specializations].split(',').map(&:to_i)
+    list.each do |item|
+      @freelancer.specializations << Specialization.find(item) if item != ''
+    end
     if @freelancer.save
       render json: @freelancer, status: :created, location: api_v1_freelancers_path
     else
@@ -31,6 +47,6 @@ class Api::V1::FreelancersController < ApplicationController
   end
 
   def freelancer_params
-    params.require(:freelancer).permit(:name, :photo, :details, :fee, :location, :featured_image)
+    params.require(:freelancer).permit(:name, :photo, :details, :fee, :location, :featured_image, :specializations)
   end
 end

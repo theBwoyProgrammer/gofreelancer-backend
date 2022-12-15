@@ -1,7 +1,9 @@
 class Api::V1::SpecializationsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
   # before_action :set_data, only: %i[create]
   def index
-    render json: Specialization.all, status: :ok
+    @specialization = Specialization.select('id', 'name')
+    render json: @specialization, status: :ok
   end
 
   def create
