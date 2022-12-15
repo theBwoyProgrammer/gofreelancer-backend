@@ -13,9 +13,9 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :freelancers, only: %i[index show create destroy]
       resources :specializations, only: [:index, :create]
-      resources :users, only: [] do
-        resources :reservations, only: [:create, :index, :new]
-      end
+      # resources :users, only: [] do
+      resources :reservations, only: [:create, :index, :new]
+      # end
     end
   end
 end
