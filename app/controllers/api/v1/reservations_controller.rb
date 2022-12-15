@@ -19,7 +19,7 @@ class Api::V1::ReservationsController < ApplicationController
   private
 
   def set_user
-    User.find(params[:user_id])
+    current_user
   end
 
   def reservation_params
