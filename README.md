@@ -1,4 +1,4 @@
-[![](https://img.shields.io/badge/Micronaut-Angom%20Chittaranjan-blue)](https://github.com/AngomRanjan)
+[![](https://img.shields.io/badge/Four-Micronauts-blue)](https://github.com/AngomRanjan)
 
 # GoFreelance-Back-end
 
