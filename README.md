@@ -2,7 +2,7 @@
 
 # GoFreelance-Back-end
 
-oFreelance-Back-end.
+This is a backend for GoFreelancer which enables a user to book a freelancer, cancel a booking, add, delete a freelancer.
 
 ## Built with
   - Ruby
@@ -30,7 +30,11 @@ oFreelance-Back-end.
  
 ### Authors
 
-#### 👤 Hatim
+#### 👤 Hatim Eddinani
+
+- GitHub: [@Techwolf404](https://github.com/techwolf404)
+- Twitter: [@the_BwoyPrgrmmr](https://twitter.com/the_BwoyPrgrmmr)
+- LinkedIn: [Hatim Eddinani](https://www.linkedin.com/in/hatimdev/)
 
 #### 👤 Angom Chittaranjan
 
@@ -38,28 +42,29 @@ oFreelance-Back-end.
 - Twitter: [@RanjanAngom](https://twitter.com/RanjanAngom)
 - LinkedIn: [angom-chittaranjan](https://linkedin.com/in/angom-chittaranjan)
 
+#### 👤 Ushindi Bienvenu
+
+- GitHub: [@bienvenuushindi](https://github.com/bienvenuushindi)
+- Twitter: [@usbbush](https://twitter.com/usbbush)
+- LinkedIn: [Ushindi Bienvenu](http://www.linkedin.com/in/usbbush)
+
+#### 👤 Nicholas Maina Kamau
+
+- GitHub: [@businesskaniki](https://github.com/businesskaniki)
+- Twitter: [@Nik7346](https://twitter.com/Nik7346)
+- LinkedIn: [Nicholas Maina Kamau](https://www.linkedin.com/in/nicholas-maina-kamau/)
+
 ### Show your support
 Give a [⭐️](../../stargazers) if you like this project!
 
 ### 🤝 Contributing
 Contributions, [issues](../../issues), and feature requests are welcome! Feel free to check the issues page.
 
-## :footprints: Track Me
-
-<a href="https://twitter.com/RanjanAngom?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">
-<img src="https://img.shields.io/badge/-@RanjanAngom-blue?style=flat&logo=twitter&logoColor=white">
-</a>
-
-<a class="github-button" href="https://github.com/AngomRanjan" aria-label="Follow @AngomRanjan on GitHub">
- <img src="https://img.shields.io/badge/-@AngomRanjan-green?style=flat&logo=github&logoColor=white">
-</a>
-
 ### Acknowledgments
 
 - Thanks to the Microverse team for the great curriculum 🙌.
 - Thanks to Code Reviewers for the insightful feedback ⚡💘.
-- My Family.
-- All my fellow micronauts.
+- Thanks to my team [@AngomRanjan](https://github.com/AngomRanjan), [@Techwolf404](https://github.com/techwolf404), [@bienvenuushindi](https://github.com/bienvenuushindi), [@businesskaniki](https://github.com/businesskaniki)
 
 ## 📝 License
 
