@@ -1,5 +1,9 @@
 class Freelancer < ApplicationRecord
   has_many :users, through: :reservations
+
+  has_and_belongs_to_many :specializations, dependent: :destroy
+  has_one_attached :featured_image
+
   # has_and_belongs_to_many :freelancer
   has_and_belongs_to_many :specializations, dependent: :destroy
   validates :name, presence: true
