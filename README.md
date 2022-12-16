@@ -4,6 +4,19 @@
 
 This is a backend for GoFreelancer which enables a user to book a freelancer, cancel a booking, add, delete a freelancer.
 
+# Kanban board
+
+[link](https://github.com/users/bienvenuushindi/projects/3)
+
+![groupkanban](https://user-images.githubusercontent.com/26736582/205078094-ae3ac4b5-d300-457e-9378-cb8fe10c9e85.gif)
+
+- This group has 4 members 
+
+#### Frontend Link
+- [link](https://github.com/bienvenuushindi/booking-app)
+#### Backend Link
+- [Link](https://github.com/techwolf404/gofreelancer-backend)
+
 ## Built with
   - Ruby
   - Rails
