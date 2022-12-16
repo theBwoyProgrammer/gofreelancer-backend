@@ -1,7 +1,6 @@
 class Api::V1::FreelancersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_freelancer, only: %i[show destroy]
-
   def index
     render json: Freelancer.all, status: :ok
   end
