@@ -5,7 +5,7 @@ class FreelancerSerializer < ActiveModel::Serializer
     return unless object.featured_image.attached?
 
     {
-      url: rails_blob_url(object.featured_image)
+      url:  Rails.application.routes.default_url_options[:host] + rails_blob_url(object.featured_image)
     }
   end
 
