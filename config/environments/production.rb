@@ -1,8 +1,8 @@
 require "active_support/core_ext/integer/time"
-
+BASE_URL = "gofreelancer.up.railway.app"
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.hosts << "gofreelancer.up.railway.app"
+  config.hosts << BASE_URL
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -29,7 +29,7 @@ Rails.application.configure do
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for Apache
   # config.action_dispatch.x_sendfile_header = "X-Accel-Redirect" # for NGINX
-
+  config.action_controller.default_url_options = { host: BASE_URL }
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
