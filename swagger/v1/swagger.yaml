@@ -23,29 +23,29 @@ paths:
                       type: integer
                     name:
                       type: string
-                      example: Sarita Strosin VM
+                      example: Letty Fadel II
                     photo:
                       type: string
-                      example: http://fritsch-nitzsche.name/alysa
+                      example: http://smitham-prosacco.name/yuri
                       pattern: "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$"
                     details:
                       type: string
-                      example: Inventore consequatur corporis. Vitae laboriosam consectetur.
-                        Et at corrupti.
+                      example: Et molestiae quidem. Repellendus maxime dolor. Nostrum
+                        magni illum.
                     fee:
                       type: integer
-                      example: 27
+                      example: 50
                     location:
                       type: string
-                      example: 13831 Judith Lodge
+                      example: 475 Latonia Mall
                     created_at:
                       type: string
                       format: datetime
-                      example: '2022-11-29'
+                      example: '2022-12-16'
                     updated_at:
                       type: string
                       format: datetime
-                      example: '2022-11-25'
+                      example: '2022-12-26'
     post:
       summary: create freelancer
       tags:
@@ -62,21 +62,21 @@ paths:
               properties:
                 name:
                   type: string
-                  example: Eloy Morissette
+                  example: Sammy Erdman DO
                 photo:
                   type: string
-                  example: http://schroeder.io/valencia
+                  example: http://mclaughlin.info/arlena
                   pattern: "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$"
                 details:
                   type: string
-                  example: Perspiciatis quia et. Optio quis deleniti. Consequatur
-                    aspernatur qui.
+                  example: Et commodi veniam. Facilis ut architecto. Voluptatem molestias
+                    omnis.
                 fee:
                   type: integer
-                  example: 21
+                  example: 81
                 location:
                   type: string
-                  example: 38807 Jeri Neck
+                  example: 282 Timmy Divide
               required:
               - name
               - photo
@@ -108,29 +108,29 @@ paths:
                     type: integer
                   name:
                     type: string
-                    example: Randal Lang
+                    example: Lucius Wisozk
                   photo:
                     type: string
-                    example: http://pacocha.name/emory_von
+                    example: http://kunze-moen.info/aracelis
                     pattern: "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$"
                   details:
                     type: string
-                    example: Rem rerum quo. Voluptatem laborum consequuntur. Et iste
-                      assumenda.
+                    example: Animi placeat fugit. Autem doloribus in. Similique est
+                      quisquam.
                   fee:
                     type: integer
-                    example: 39
+                    example: 84
                   location:
                     type: string
-                    example: 898 Tillman Walks
+                    example: 8865 Fritsch Summit
                   created_at:
                     type: string
                     format: datetime
-                    example: '2022-11-30'
+                    example: '2022-12-16'
                   updated_at:
                     type: string
                     format: datetime
-                    example: '2022-11-27'
+                    example: '2022-12-19'
                 required:
                 - id
                 - name
@@ -182,21 +182,21 @@ paths:
                     appointment_date:
                       type: string
                       format: datetime
-                      example: '2023-01-01'
+                      example: '2023-01-07'
                     freelancer_id:
                       type: integer
-                      example: 36
+                      example: 1
                     user_id:
                       type: integer
                       example: user_id
                     created_at:
                       type: string
                       format: datetime
-                      example: '2022-11-19'
+                      example: '2022-12-17'
                     updated_at:
                       type: string
                       format: datetime
-                      example: '2022-11-26'
+                      example: '2022-12-16'
         '404':
           description: user not found
     post:
@@ -218,10 +218,10 @@ paths:
                 appointment_date:
                   type: string
                   format: datetime
-                  example: '2022-12-16'
+                  example: '2023-01-05'
                 freelancer_id:
                   type: integer
-                  example: 37
+                  example: 2
               required:
               - appointment_date
               - freelancer_id
@@ -252,10 +252,10 @@ paths:
                 appointment_date:
                   type: string
                   format: datetime
-                  example: '2022-12-15'
+                  example: '2023-01-17'
                 freelancer_id:
                   type: integer
-                  example: 38
+                  example: 3
               required:
               - appointment_date
               - freelancer_id
@@ -278,15 +278,15 @@ paths:
                       type: integer
                     name:
                       type: string
-                      example: Vito Brekke
+                      example: The Hon. Jarred Berge
                     created_at:
                       type: string
                       format: datetime
-                      example: '2022-12-06'
+                      example: '2022-12-24'
                     updated_at:
                       type: string
                       format: datetime
-                      example: '2022-11-22'
+                      example: '2022-12-19'
     post:
       summary: create specialization
       tags:
@@ -303,11 +303,11 @@ paths:
               properties:
                 name:
                   type: string
-                  example: Carole Waelchi
+                  example: Dreama Gutmann
               required:
               - name
 servers:
-- url: http://{defaultHost}
+- url: https://{defaultHost}
   variables:
     defaultHost:
-      default: 127.0.0.1:3000/
+      default: gofreelancer.up.railway.app/
