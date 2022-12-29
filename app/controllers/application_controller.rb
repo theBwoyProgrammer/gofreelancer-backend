@@ -6,6 +6,14 @@ class ApplicationController < ActionController::API
     render json: { error: 'Not Authorized' }, status: 401 unless user_signed_in? || request.method == 'POST'
   end
 
+  def default_url_options
+    if Rails.env.production?
+      { host: 'gofreelancer.up.railway.app' }
+    else
+      { host: 'localhost', port: 3000 }
+    end
+  end
+
   protected
 
   def configure_permitted_parameters
