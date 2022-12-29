@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  default_url_options :host => 'gofreelancer.up.railway.app'
+  default_url_options  :protocol=> "https", :host => 'gofreelancer.up.railway.app'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'
