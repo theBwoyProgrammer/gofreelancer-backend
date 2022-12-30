@@ -3,5 +3,7 @@ class ReservationSerializer < ActiveModel::Serializer
 
   def freelancer
     object.freelancer
+    object.freelancer.featured_image
   end
+
 end
