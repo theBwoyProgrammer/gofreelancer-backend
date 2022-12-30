@@ -32,6 +32,7 @@ Rails.application.configure do
   # config.action_controller.default_url_options = { host: BASE_URL }
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
+  # config.active_storage.service = :local
   config.active_storage.web_image_content_types = %w(image/png image/jpeg image/gif)
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
