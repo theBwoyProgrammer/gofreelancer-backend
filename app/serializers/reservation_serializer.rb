@@ -4,7 +4,8 @@ class ReservationSerializer < ActiveModel::Serializer
 
   def freelancer
     freelancer = object.freelancer
-    { **freelancer, **featured_image(freelancer) }
+    featured_image = featured_image(freelancer)
+    { **freelancer, featured_image: featured_image }
   end
 
   def featured_image(freelancer)
