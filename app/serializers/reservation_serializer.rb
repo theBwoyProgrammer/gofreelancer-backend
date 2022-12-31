@@ -2,10 +2,7 @@ class ReservationSerializer < ActiveModel::Serializer
   attributes :id, :appointment_date, :city, :freelancer
 
   def freelancer
-    {
-      data: object.freelancer,
-      featured_image: featured_image(object.freelancer)
-    }
+    object.freelancer
   end
 
   def featured_image(freelancer)
