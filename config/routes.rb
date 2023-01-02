@@ -15,7 +15,7 @@ Rails.application.routes.draw do
       resources :freelancers, only: %i[index show create destroy]
       resources :specializations, only: [:index, :create]
       # resources :users, only: [] do
-      resources :reservations, only: [:create, :index, :new, :destroy]
+      resources :reservations, only: [:create, :index, :destroy]
       # end
     end
   end
