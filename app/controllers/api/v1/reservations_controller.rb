@@ -16,6 +16,11 @@ class Api::V1::ReservationsController < ApplicationController
     end
   end
 
+  def destroy
+    @freelancer.destroy
+    head :no_content
+  end
+
   private
 
   def set_user
