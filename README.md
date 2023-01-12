@@ -44,7 +44,7 @@ This is a backend for GoFreelancer which enables a user to book a freelancer, ca
 
 #### 👤 Hatim Eddinani
 
-- GitHub: [@Techwolf404](https://github.com/techwolf404)
+- GitHub: [@theBwoyProgrammer](https://github.com/theBwoyProgrammer)
 - Twitter: [@the_BwoyPrgrmmr](https://twitter.com/the_BwoyPrgrmmr)
 - LinkedIn: [Hatim Eddinani](https://www.linkedin.com/in/hatimdev/)
 
